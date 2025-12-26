@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Allan Morales">
     <title>Alke Wallet | Transactions</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1 id="app-title">Alke Wallet</h1>
+        <h2>Historial de Transacciones</h2>
+        <nav>
+            <ul>
+                <li><a href="login.html">Cerrar Sesión</a></li>
+                <li><a href="menu.html">Volver al menú</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="transactions-search">
+            <form id="transactions-filter">
+                <fieldset>
+                    <legend>Filtro de búsqueda</legend>
+                    <label for="search-by">Buscar por</label><br>
+                    <select name="search-by" id="search-by">
+                        <option value="ammount-filter">Monto</option>
+                        <option value="account-name">Nombre de Contacto</option>
+                        <option value="transaction-date">Fecha</option>
+                    </select><br><br>
+                    <label for="filter-value">Ingrese valor de búsqueda</label><br>
+                    <input type="text" name="filter-value" id="filter-value"><br><br>
+                    <button type="button">Buscar</button>
+                </fieldset>
+            </form>
+        </section>
+        <section id="transactions-history">
+            <h3>Últimos movimientos</h3>
+            <table>
+                <thead>
+                    <th>Nombre Contacto</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>$5500</td>
+                        <td>26-12-2025</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>$10000</td>
+                        <td>25-12-2025</td>
+                    </tr>
+                    <tr>
+                        <td>Khidir Karawita</td>
+                        <td>$6550</td>
+                        <td>25-12-2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div>
+        <a href="#app-title">Ir arriba</a>
+    </div>
+    <footer>
+        <p>
+            &copy; Alke Wallet 2025
+        </p>
+    </footer>
 </body>
+
 </html>

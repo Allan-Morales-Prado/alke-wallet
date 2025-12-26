@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Allan Morales">
     <title>Alke Wallet | Send Money</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1 id="app-title">Alke Wallet</h1>
+        <h2>Enviar dinero</h2>
+        <nav>
+            <ul>
+                <li><a href="login.html">Cerrar Sesión</a></li>
+                <li><a href="menu.html">Volver al menú</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="" method="post">
+                <span id="to-account">Contacto seleccionado:</span>
+                <div>
+                    John Doe - RUT:18.332.131-7 - Cuenta N°0023318332131
+                </div><br>
+                <label for="from-account">Cuenta de Origen</label><br>
+                <select name="from-account" id="from-account">
+                    <option value="cuenta-0002311423">N°0002311423</option>
+                    <option value="cuenta-0002355196">N°0002355196</option>
+                    <option value="cuenta-0002378830">N°0002378830</option>
+                </select><br><br>
+                <label for="ammount">Monto</label><br>
+                <input type="number" name="ammount" id="ammount" min="1" placeholder="ej:5000">
+                <p id="available-balance"><em>Saldo disponible cta.: $140000</em></p>
+                <button type="submit">Enviar dinero</button><br><br>
+                <fieldset title="contacts">
+                    <legend>Lista de Contactos</legend>
+                    <label for="contact-name">Buscar contacto</label><br>
+                    <input type="text" name="contact-name" id="contact-name">
+                    <button type="button">+ Nuevo Contacto</button><br><br>
+                    <table id="contact-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>RUT</th>
+                                <th>Número de Cuenta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ismail Al-Kanabawi</td>
+                                <td class="rut-column">33.121.311-0</td>
+                                <td class="account-column">0023333121311</td>
+                            </tr>
+                            <tr>
+                                <td>Khidir Karawita</td>
+                                <td class="rut-column">33.098.711-k</td>
+                                <td class="account-column">0023333098711</td>
+                            </tr>
+                            <tr>
+                                <td>John Doe</td>
+                                <td class="rut-column">18.332.131-7</td>
+                                <td class="account-column">0023318332131</td>
+                            </tr>
+                            <tr>
+                                <td>Muhammad Sumbul</td>
+                                <td class="rut-column">33.320.755-4</td>
+                                <td class="account-column">0023333320755</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <div>
+        <a href="#app-title">Ir arriba</a>
+    </div>
+    <footer>
+        <p>
+            &copy; Alke Wallet 2025
+        </p>
+    </footer>
 </body>
+
 </html>

@@ -7,6 +7,42 @@
     <title>Alke Wallet | Deposit</title>
 </head>
 <body>
-    
+    <head>
+        <h1>Alke Wallet</h1>
+        <h2>Depósito</h2>
+        <nav>
+            <ul>
+                <li><a href="login.html">Cerrar Sesión</a></li>
+                <li><a href="menu.html">Volver al menú</a></li>
+            </ul>
+        </nav>
+    </head>
+    <main>
+        <form action="" method="post">
+            <!--Desde-->
+            <label for="from-account">Cuenta de Origen</label><br>
+            <select name="from-account" id="from-account">
+                <option value="cuenta-0002311423">N°0002311423</option>
+                <option value="cuenta-0002355196">N°0002355196</option>
+                <option value="cuenta-0002378830">N°0002378830</option>
+            </select>
+            <p id="available-balance">Saldo disponible: $140000</p>
+            <!--Hacia-->
+            <label for="to-account">Cuenta de Destino</label><br>
+            <select name="to-account" id="to-account">
+                <option value="cuenta-0002311423">N°0002311423</option>
+                <option value="cuenta-0002355196">N°0002355196</option>
+                <option value="cuenta-0002378830">N°0002378830</option>
+            </select><br><br>
+            <label for="ammount">Monto</label><br>
+            <input type="number" name="ammount" id="ammount" min="1" placeholder="ej:5000"><br><br>
+            <button type="submit">Depositar</button>
+        </form>
+    </main>
+    <footer>
+        <p>
+            &copy; Alke Wallet 2025
+        </p>
+    </footer>
 </body>
 </html>
