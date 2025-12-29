@@ -4,45 +4,449 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Allan Morales">
-    <title>Alke Wallet | Deposit</title>
+    <title>Alke Wallet | Depósito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <head>
-        <h1>Alke Wallet</h1>
-        <h2>Depósito</h2>
-        <nav>
-            <ul>
-                <li><a href="login.html">Cerrar Sesión</a></li>
-                <li><a href="menu.html">Volver al menú</a></li>
-            </ul>
-        </nav>
-    </head>
-    <main>
-        <form action="" method="post">
-            <!--Desde-->
-            <label for="from-account">Cuenta de Origen</label><br>
-            <select name="from-account" id="from-account">
-                <option value="cuenta-0002311423">N°0002311423</option>
-                <option value="cuenta-0002355196">N°0002355196</option>
-                <option value="cuenta-0002378830">N°0002378830</option>
-            </select>
-            <p id="available-balance">Saldo disponible: $140000</p>
-            <!--Hacia-->
-            <label for="to-account">Cuenta de Destino</label><br>
-            <select name="to-account" id="to-account">
-                <option value="cuenta-0002311423">N°0002311423</option>
-                <option value="cuenta-0002355196">N°0002355196</option>
-                <option value="cuenta-0002378830">N°0002378830</option>
-            </select><br><br>
-            <label for="ammount">Monto</label><br>
-            <input type="number" name="ammount" id="ammount" min="1" placeholder="ej:5000"><br><br>
-            <button type="submit">Depositar</button>
-        </form>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="bg-primary text-white shadow">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/logo.webp" 
+                         alt="Alke Wallet" 
+                         class="img-fluid me-3" 
+                         style="max-height: 40px; width: auto;">
+                    <div>
+                        <h1 class="h3 mb-0 montserrat-medium">Alke Wallet</h1>
+                        <h2 class="h5 mb-0 opacity-75">
+                            <i class="bi bi-arrow-down-circle me-1"></i>Depósito
+                        </h2>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="menu.html" class="btn btn-outline-light btn-sm me-2">
+                                <i class="bi bi-arrow-left me-1"></i>Volver al menú
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="btn btn-outline-light btn-sm">
+                                <i class="bi bi-box-arrow-right me-1"></i>Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow-1 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <!-- Información importante -->
+                    <div class="alert alert-info border-0 shadow-sm mb-4">
+                        <div class="d-flex">
+                            <i class="bi bi-info-circle fs-4 me-3"></i>
+                            <div>
+                                <h5 class="alert-heading mb-2">Información sobre depósitos</h5>
+                                <p class="mb-0">Los depósitos entre cuentas propias son instantáneos y sin comisiones. Recuerda que el monto máximo por transacción es de $1.000.000.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de depósito -->
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-light py-3">
+                            <h3 class="card-title h4 mb-0">
+                                <i class="bi bi-cash-coin me-2"></i>Realizar Depósito
+                            </h3>
+                        </div>
+                        <div class="card-body p-4">
+                            <form action="" method="post">
+                                <!-- Sección: Cuenta de origen -->
+                                <div class="mb-5">
+                                    <h4 class="h5 mb-3 border-bottom pb-2">
+                                        <i class="bi bi-arrow-up-right-circle text-primary me-2"></i>
+                                        Cuenta de Origen
+                                    </h4>
+                                    
+                                    <div class="mb-3">
+                                        <label for="from-account" class="form-label fw-bold">
+                                            <i class="bi bi-bank me-1"></i>Selecciona la cuenta de origen
+                                        </label>
+                                        <select class="form-select form-select-lg" name="from-account" id="from-account" required>
+                                            <option value="" disabled selected>Selecciona una cuenta</option>
+                                            <option value="cuenta-0002311423">N°0002311423 - Cuenta Corriente</option>
+                                            <option value="cuenta-0002355196">N°0002355196 - Cuenta de Ahorro</option>
+                                            <option value="cuenta-0002378830">N°0002378830 - Cuenta Vista</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Saldo disponible -->
+                                    <div class="card border-success bg-success bg-opacity-10">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="h6 mb-1 text-success">
+                                                        <i class="bi bi-wallet2 me-1"></i>Saldo disponible
+                                                    </h5>
+                                                    <p class="text-muted small mb-0">Esta cuenta tiene</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <span class="display-6 fw-bold text-success" id="available-balance">
+                                                        $140.000
+                                                    </span>
+                                                    <p class="text-muted small mb-0">Disponible para transferir</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sección: Cuenta de destino -->
+                                <div class="mb-5">
+                                    <h4 class="h5 mb-3 border-bottom pb-2">
+                                        <i class="bi bi-arrow-down-left-circle text-success me-2"></i>
+                                        Cuenta de Destino
+                                    </h4>
+                                    
+                                    <div class="mb-3">
+                                        <label for="to-account" class="form-label fw-bold">
+                                            <i class="bi bi-arrow-right-circle me-1"></i>Selecciona la cuenta de destino
+                                        </label>
+                                        <select class="form-select form-select-lg" name="to-account" id="to-account" required>
+                                            <option value="" disabled selected>Selecciona una cuenta</option>
+                                            <option value="cuenta-0002311423">N°0002311423 - Cuenta Corriente</option>
+                                            <option value="cuenta-0002355196">N°0002355196 - Cuenta de Ahorro</option>
+                                            <option value="cuenta-0002378830">N°0002378830 - Cuenta Vista</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Información de la cuenta destino -->
+                                    <div class="card border-primary bg-primary bg-opacity-10">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-info-circle fs-4 text-primary me-3"></i>
+                                                <div>
+                                                    <h6 class="mb-1">Depósito interno</h6>
+                                                    <p class="small mb-0">El dinero se transferirá instantáneamente a la cuenta seleccionada. Puedes verificar el movimiento en "Últimos movimientos".</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sección: Monto -->
+                                <div class="mb-5">
+                                    <h4 class="h5 mb-3 border-bottom pb-2">
+                                        <i class="bi bi-currency-dollar text-warning me-2"></i>
+                                        Monto del Depósito
+                                    </h4>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="mb-3">
+                                                <label for="amount" class="form-label fw-bold">
+                                                    <i class="bi bi-cash-stack me-1"></i>Ingresa el monto
+                                                </label>
+                                                <div class="input-group input-group-lg">
+                                                    <span class="input-group-text bg-light border-end-0">$</span>
+                                                    <input type="number" 
+                                                           class="form-control border-start-0" 
+                                                           name="amount" 
+                                                           id="amount" 
+                                                           min="1" 
+                                                           max="1000000"
+                                                           step="100"
+                                                           placeholder="Ej: 5000" 
+                                                           required>
+                                                </div>
+                                                <div class="form-text">
+                                                    Monto mínimo: $1 - Monto máximo: $1.000.000
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">Selección rápida</label>
+                                                <div class="d-grid gap-2">
+                                                    <button type="button" class="btn btn-outline-primary amount-btn" data-amount="10000">$10.000</button>
+                                                    <button type="button" class="btn btn-outline-primary amount-btn" data-amount="50000">$50.000</button>
+                                                    <button type="button" class="btn btn-outline-primary amount-btn" data-amount="100000">$100.000</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Resumen del depósito -->
+                                    <div class="card border-warning bg-warning bg-opacity-10 mt-4">
+                                        <div class="card-body">
+                                            <div class="row text-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <div class="p-3">
+                                                        <i class="bi bi-arrow-up-right text-primary fs-2 mb-2"></i>
+                                                        <h6 class="mb-1">Origen</h6>
+                                                        <p class="fw-bold mb-0" id="summary-from">N°0002311423</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <div class="p-3">
+                                                        <i class="bi bi-arrow-down-left text-success fs-2 mb-2"></i>
+                                                        <h6 class="mb-1">Destino</h6>
+                                                        <p class="fw-bold mb-0" id="summary-to">N°0002311423</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="p-3">
+                                                        <i class="bi bi-cash-coin text-warning fs-2 mb-2"></i>
+                                                        <h6 class="mb-1">Monto</h6>
+                                                        <p class="fw-bold mb-0" id="summary-amount">$0</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botones de acción -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end border-top pt-4 mt-4">
+                                    <button type="reset" class="btn btn-outline-secondary px-4">
+                                        <i class="bi bi-x-circle me-2"></i>Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-primary px-5">
+                                        <i class="bi bi-check-circle me-2"></i>Confirmar Depósito
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Información adicional -->
+                    <div class="mt-4">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-lightning text-primary fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">Transferencia inmediata</h6>
+                                        <p class="small text-muted mb-0">El dinero se transfiere al instante</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-shield-check text-success fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">100% Seguro</h6>
+                                        <p class="small text-muted mb-0">Transacciones encriptadas y protegidas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-percent text-info fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">Sin comisiones</h6>
+                                        <p class="small text-muted mb-0">Entre cuentas propias no hay costos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>
-            &copy; Alke Wallet 2025
-        </p>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        <i class="bi bi-shield-lock me-1"></i>
+                        &copy; Alke Wallet 2025 - Depósitos seguros
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-light">
+                        <i class="bi bi-clock me-1"></i>
+                        Operación registrada: Depósito interno
+                    </small>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+            crossorigin="anonymous"></script>
+
+    <!-- Script para funcionalidades del depósito -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fromAccount = document.getElementById('from-account');
+            const toAccount = document.getElementById('to-account');
+            const amountInput = document.getElementById('amount');
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            const availableBalance = document.getElementById('available-balance');
+            const summaryFrom = document.getElementById('summary-from');
+            const summaryTo = document.getElementById('summary-to');
+            const summaryAmount = document.getElementById('summary-amount');
+
+            // Datos de cuentas (simulados)
+            const accountsData = {
+                'cuenta-0002311423': { 
+                    number: 'N°0002311423', 
+                    balance: 140000,
+                    type: 'Cuenta Corriente'
+                },
+                'cuenta-0002355196': { 
+                    number: 'N°0002355196', 
+                    balance: 75500,
+                    type: 'Cuenta de Ahorro'
+                },
+                'cuenta-0002378830': { 
+                    number: 'N°0002378830', 
+                    balance: 210300,
+                    type: 'Cuenta Vista'
+                }
+            };
+
+            // Formatear moneda
+            function formatCurrency(amount) {
+                return '$' + amount.toLocaleString('es-CL');
+            }
+
+            // Actualizar información de la cuenta
+            function updateAccountInfo() {
+                const selectedFrom = fromAccount.value;
+                if (selectedFrom && accountsData[selectedFrom]) {
+                    availableBalance.textContent = formatCurrency(accountsData[selectedFrom].balance);
+                    summaryFrom.textContent = accountsData[selectedFrom].number;
+                }
+                
+                const selectedTo = toAccount.value;
+                if (selectedTo && accountsData[selectedTo]) {
+                    summaryTo.textContent = accountsData[selectedTo].number;
+                }
+            }
+
+            // Actualizar resumen del monto
+            function updateAmountSummary() {
+                const amount = parseFloat(amountInput.value) || 0;
+                summaryAmount.textContent = formatCurrency(amount);
+                
+                // Validar que no exceda el saldo
+                const selectedFrom = fromAccount.value;
+                if (selectedFrom && accountsData[selectedFrom]) {
+                    if (amount > accountsData[selectedFrom].balance) {
+                        amountInput.classList.add('is-invalid');
+                        amountInput.classList.remove('is-valid');
+                    } else if (amount > 0) {
+                        amountInput.classList.add('is-valid');
+                        amountInput.classList.remove('is-invalid');
+                    } else {
+                        amountInput.classList.remove('is-valid', 'is-invalid');
+                    }
+                }
+            }
+
+            // Botones de monto rápido
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const amount = this.getAttribute('data-amount');
+                    amountInput.value = amount;
+                    updateAmountSummary();
+                    
+                    // Destacar botón presionado
+                    amountButtons.forEach(btn => btn.classList.remove('btn-primary', 'active'));
+                    this.classList.add('btn-primary', 'active');
+                    this.classList.remove('btn-outline-primary');
+                });
+            });
+
+            // Event listeners
+            fromAccount.addEventListener('change', updateAccountInfo);
+            toAccount.addEventListener('change', updateAccountInfo);
+            amountInput.addEventListener('input', updateAmountSummary);
+            
+            // Validación del formulario
+            document.querySelector('form').addEventListener('submit', function(e) {
+                const amount = parseFloat(amountInput.value) || 0;
+                const selectedFrom = fromAccount.value;
+                const selectedTo = toAccount.value;
+                
+                if (!selectedFrom || !selectedTo) {
+                    e.preventDefault();
+                    alert('Por favor, selecciona ambas cuentas');
+                    return;
+                }
+                
+                if (selectedFrom === selectedTo) {
+                    e.preventDefault();
+                    alert('No puedes transferir a la misma cuenta de origen');
+                    return;
+                }
+                
+                if (amount <= 0) {
+                    e.preventDefault();
+                    alert('Por favor, ingresa un monto válido');
+                    return;
+                }
+                
+                if (accountsData[selectedFrom] && amount > accountsData[selectedFrom].balance) {
+                    e.preventDefault();
+                    alert('Saldo insuficiente en la cuenta de origen');
+                    return;
+                }
+                
+                // Confirmación final
+                if (!confirm(`¿Confirmas el depósito de ${formatCurrency(amount)} de ${accountsData[selectedFrom].number} a ${accountsData[selectedTo].number}?`)) {
+                    e.preventDefault();
+                }
+            });
+
+            // Inicializar
+            updateAccountInfo();
+        });
+    </script>
+
+    <!-- Estilos adicionales -->
+    <style>
+        .amount-btn.active {
+            background-color: var(--bs-primary);
+            color: white;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .form-select-lg, .input-group-lg {
+            border-radius: 0.5rem;
+        }
+        
+        /* Animación para el resumen */
+        #summary-amount {
+            transition: all 0.3s ease;
+        }
+        
+        /* Efecto hover para las tarjetas de información */
+        .card.bg-light:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
 </body>
 </html>

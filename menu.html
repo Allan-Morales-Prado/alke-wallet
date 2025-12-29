@@ -1,49 +1,360 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Allan Morales">
-    <title>Alke Wallet | Menu</title>
+    <title>Alke Wallet | Menú Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <header>
-        <h1>Alke Wallet</h1>
-        <h3>Bienvenido(a)</h3>
-        <p><a href="login.html">Cerrar Sesión</a></p>
-    </header>
-    <main>
-        <section>
-            <div id="selected-account">
-                <h3>Cuenta N°0002311423</h3>
-                <h4>Tu saldo es de:</h4>
-                <h2>$140000</h2>
-            </div>
 
-            <form>
-                <label for="account">Seleccione una cuenta:</label>
-                <select name="account" id="account">
-                    <option value="cuenta-0002311423">N°0002311423</option>
-                    <option value="cuenta-0002355196">N°0002355196</option>
-                    <option value="cuenta-0002378830">N°0002378830</option>
-                </select>
-            </form>
-        </section>
-        <section>
-            <p>¿Qué desea hacer?</p>
-            <nav>
-                <ul>
-                    <li><a href="deposit.html">Depositar</a></li>
-                    <li><a href="sendmoney.html">Enviar Dinero</a></li>
-                    <li><a href="transactions.html">Últimos movimientos</a></li>
-                </ul>
-            </nav>
-        </section>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="bg-primary text-white shadow">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/logo.webp" alt="Alke Wallet" class="img-fluid me-3"
+                        style="max-height: 40px; width: auto;">
+                    <div>
+                        <h1 class="h3 mb-0 montserrat-medium">Alke Wallet</h1>
+                        <h2 class="h5 mb-0 opacity-75">
+                            <i class="bi bi-person-circle me-1"></i>Bienvenido(a), Usuario
+                        </h2>
+                    </div>
+                </div>
+                <nav>
+                    <a href="login.html" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-box-arrow-right me-1"></i>Cerrar Sesión
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow-1 py-5">
+        <div class="container">
+            <!-- Sección de información de cuenta -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm border-0 mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-4">
+                                    <div>
+                                        <h3 class="h5 text-muted mb-1">
+                                            <i class="bi bi-credit-card me-2"></i>Cuenta Seleccionada
+                                        </h3>
+                                        <h2 class="h4 fw-bold text-primary" id="selected-account-number">
+                                            N°0002311423
+                                        </h2>
+                                    </div>
+                                    <div class="text-end">
+                                        <h4 class="h6 text-muted mb-1">Saldo disponible</h4>
+                                        <h2 class="h3 fw-bold text-success" id="account-balance">
+                                            $140.000
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <!-- Selector de cuentas -->
+                                <form class="mt-3">
+                                    <div class="row align-items-end">
+                                        <div class="col-md-8">
+                                            <label for="account" class="form-label fw-bold">
+                                                <i class="bi bi-wallet2 me-1"></i>Seleccionar otra cuenta:
+                                            </label>
+                                            <select class="form-select" name="account" id="account">
+                                                <option value="cuenta-0002311423">N°0002311423 - $140.000</option>
+                                                <option value="cuenta-0002355196">N°0002355196 - $75.500</option>
+                                                <option value="cuenta-0002378830">N°0002378830 - $210.300</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 mt-2 mt-md-0">
+                                            <button type="button" class="btn btn-outline-primary w-100"
+                                                id="refresh-btn">
+                                                <i class="bi bi-arrow-clockwise me-1"></i>Actualizar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Información adicional de la cuenta -->
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-calendar-check text-primary fs-1 mb-2"></i>
+                                        <h5 class="h6 fw-bold">Último movimiento</h5>
+                                        <p class="text-muted small">15 Ene 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-arrow-up-circle text-success fs-1 mb-2"></i>
+                                        <h5 class="h6 fw-bold">Ingresos mes</h5>
+                                        <p class="text-muted small">$45.000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-arrow-down-circle text-danger fs-1 mb-2"></i>
+                                        <h5 class="h6 fw-bold">Gastos mes</h5>
+                                        <p class="text-muted small">$12.500</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección de acciones rápidas -->
+                    <div class="col-lg-4">
+                        <section class="card shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <h3 class="h4 mb-4 text-center">
+                                    <i class="bi bi-lightning-charge text-warning me-2"></i>
+                                    ¿Qué desea hacer?
+                                </h3>
+
+                                <nav class="d-grid gap-3">
+                                    <!-- Depósito -->
+                                    <a href="deposit.html"
+                                        class="btn btn-outline-primary btn-lg py-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-arrow-down-circle fs-4 me-3"></i>
+                                            <div class="text-start">
+                                                <h5 class="h6 mb-0 fw-bold">Depositar</h5>
+                                                <small class="text-muted">Agregar fondos a tu cuenta</small>
+                                            </div>
+                                        </div>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+
+                                    <!-- Enviar dinero -->
+                                    <a href="sendmoney.html"
+                                        class="btn btn-outline-success btn-lg py-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-send fs-4 me-3"></i>
+                                            <div class="text-start">
+                                                <h5 class="h6 mb-0 fw-bold">Enviar Dinero</h5>
+                                                <small class="text-muted">Transferir a otras cuentas</small>
+                                            </div>
+                                        </div>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+
+                                    <!-- Últimos movimientos -->
+                                    <a href="transactions.html"
+                                        class="btn btn-outline-info btn-lg py-3 d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-clock-history fs-4 me-3"></i>
+                                            <div class="text-start">
+                                                <h5 class="h6 mb-0 fw-bold">Últimos movimientos</h5>
+                                                <small class="text-muted">Ver historial de transacciones</small>
+                                            </div>
+                                        </div>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+
+                                    <!-- Acciones adicionales -->
+                                    <div class="mt-4 pt-3 border-top">
+                                        <div class="row g-2">
+                                            <div class="col-6">
+                                                <a href="#"
+                                                    class="btn btn-light w-100 d-flex flex-column align-items-center py-2">
+                                                    <i class="bi bi-credit-card fs-5 mb-1"></i>
+                                                    <small>Tarjetas</small>
+                                                </a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="#"
+                                                    class="btn btn-light w-100 d-flex flex-column align-items-center py-2">
+                                                    <i class="bi bi-receipt fs-5 mb-1"></i>
+                                                    <small>Pagar</small>
+                                                </a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="#"
+                                                    class="btn btn-light w-100 d-flex flex-column align-items-center py-2">
+                                                    <i class="bi bi-graph-up fs-5 mb-1"></i>
+                                                    <small>Estadísticas</small>
+                                                </a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="#"
+                                                    class="btn btn-light w-100 d-flex flex-column align-items-center py-2">
+                                                    <i class="bi bi-gear fs-5 mb-1"></i>
+                                                    <small>Ajustes</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de transacciones recientes (preview) -->
+            <section class="mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h4">
+                        <i class="bi bi-list-check me-2"></i>Movimientos recientes
+                    </h3>
+                    <a href="transactions.html" class="btn btn-sm btn-outline-secondary">
+                        Ver todos <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <div
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div>
+                                    <i class="bi bi-arrow-up-circle text-success me-2"></i>
+                                    <span>Depósito externo</span>
+                                    <small class="text-muted d-block">Transferencia bancaria</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="text-success fw-bold">+$25.000</span>
+                                    <small class="text-muted d-block">15/01/2025</small>
+                                </div>
+                            </div>
+                            <div
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div>
+                                    <i class="bi bi-arrow-down-circle text-danger me-2"></i>
+                                    <span>Pago de servicios</span>
+                                    <small class="text-muted d-block">Factura de luz</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="text-danger fw-bold">-$8.500</span>
+                                    <small class="text-muted d-block">14/01/2025</small>
+                                </div>
+                            </div>
+                            <div
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 py-3">
+                                <div>
+                                    <i class="bi bi-send text-primary me-2"></i>
+                                    <span>Transferencia a terceros</span>
+                                    <small class="text-muted d-block">Juan Pérez</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="text-danger fw-bold">-$15.000</span>
+                                    <small class="text-muted d-block">12/01/2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <footer>
-        <p>
-            &copy; Alke Wallet 2025
-        </p>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        <i class="bi bi-shield-check me-1"></i>
+                        &copy; Alke Wallet 2025 - Sesión activa
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-light">
+                        <i class="bi bi-clock-history me-1"></i>
+                        Último acceso: Hoy, 10:30 AM
+                    </small>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"></script>
+
+    <!-- Script para manejar cambio de cuentas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accountSelect = document.getElementById('account');
+            const accountNumberElement = document.getElementById('selected-account-number');
+            const accountBalanceElement = document.getElementById('account-balance');
+            const refreshBtn = document.getElementById('refresh-btn');
+
+            // Datos de cuentas simuladas
+            const accounts = {
+                'cuenta-0002311423': { number: 'N°0002311423', balance: '$140.000' },
+                'cuenta-0002355196': { number: 'N°0002355196', balance: '$75.500' },
+                'cuenta-0002378830': { number: 'N°0002378830', balance: '$210.300' }
+            };
+
+            // Cambiar cuenta seleccionada
+            accountSelect.addEventListener('change', function () {
+                const selectedAccount = accounts[this.value];
+                if (selectedAccount) {
+                    accountNumberElement.textContent = selectedAccount.number;
+                    accountBalanceElement.textContent = selectedAccount.balance;
+                }
+            });
+
+            // Botón de actualizar
+            refreshBtn.addEventListener('click', function () {
+                this.classList.add('rotate');
+                setTimeout(() => {
+                    this.classList.remove('rotate');
+                    // Aquí iría la lógica para actualizar datos reales
+                    console.log('Actualizando datos...');
+                }, 500);
+            });
+        });
+    </script>
+
+    <!-- Estilos adicionales para animaciones -->
+    <style>
+        .rotate {
+            animation: rotate 0.5s linear;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Estilos para las tarjetas de acciones */
+        .btn-outline-primary:hover,
+        .btn-outline-success:hover,
+        .btn-outline-info:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Estilos para la lista de movimientos */
+        .list-group-item:hover {
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+    </style>
 </body>
+
 </html>

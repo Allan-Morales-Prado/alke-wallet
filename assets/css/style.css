@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/*Colors*/
+
+:root{
+    --color-logo-a: #013A6D;
+    --color-logo-b: #34D7DF;
+    --color-logo-c: #111111;
+    --color-logo-d: #f7f7f7;
+}
+
+.montserrat-light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300px; /*usar otros valores */
+    font-style: normal;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px; /*usar otros valores */
+    font-style: normal;
+}
+
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500px; /*usar otros valores */
+  font-style: normal;
+}
+
+/* Logo */
+
+.logo-custom {
+    width: auto;
+    height: auto;
+    max-height: 120px; /* Controla la altura máxima */
+    max-width: 250px;  /* Controla el ancho máximo */
+    object-fit: contain; /* Mantiene proporciones */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .logo-custom {
+        max-height: 80px;
+        max-width: 180px;
+    }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 577px) and (max-width: 992px) {
+    .logo-custom {
+        max-height: 100px;
+        max-width: 220px;
+    }
+}
+
+/* Colores */
+.logo-a{
+    color:var(--color-logo-a);
+}
+
+.logo-b{
+    color:var(--color-logo-b);
+}
+
+.logo-c{
+    color:var(--color-logo-c);
+}
+
+.logo-d{
+    color:var(--color-logo-d);
+}
