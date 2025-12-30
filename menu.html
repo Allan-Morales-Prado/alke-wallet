@@ -8,47 +8,111 @@
   <title>Alke Wallet | Menu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/menu.css">
 </head>
 
 <body>
-  <header>
-    <h1>Alke Wallet</h1>
-    <h3>Bienvenido(a), Sr. Usuario</h3>
-    <p><a href="login.html">Cerrar Sesión</a></p>
-  </header>
-  <main>
-    <section>
-      
-
-      <form>
-        <label for="account">Seleccione una cuenta:</label>
-        <select name="account" id="account">
-          <option value="cuenta-0002311423">N°0002311423</option>
-          <option value="cuenta-0002355196">N°0002355196</option>
-          <option value="cuenta-0002378830">N°0002378830</option>
-        </select><br><br>
-      </form>
-      <div id="selected-account">
-        <h3>Cuenta N°0002311423</h3>
-        <h4>Tu saldo es de:</h4>
-        <h2>$140000</h2>
+  <header class="py-4 mb-4">
+    <div class="container position-relative">
+      <div class="header-content">
+        <h1>Alke Wallet</h1>
+        <h3>Bienvenido(a), Sr. Usuario</h3>
+        <a href="login.html" class="btn btn-outline-light btn-sm mt-2">Cerrar Sesión</a>
       </div>
-    </section>
-    <section>
-      <p>¿Qué desea hacer?</p>
-      <nav>
-        <ul>
-          <li><a href="deposit.html">Depositar</a></li>
-          <li><a href="sendmoney.html">Enviar Dinero</a></li>
-          <li><a href="transactions.html">Últimos movimientos</a></li>
-        </ul>
-      </nav>
-    </section>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 mb-4">
+        <section class="account-section p-4">
+          <form class="mb-4">
+            <div class="mb-3">
+              <label for="account" class="form-label fw-medium">Seleccione una cuenta:</label>
+              <select class="form-select" name="account" id="account" aria-label="Seleccionar cuenta">
+                <option value="cuenta-0002311423">N°0002311423</option>
+                <option value="cuenta-0002355196">N°0002355196</option>
+                <option value="cuenta-0002378830">N°0002378830</option>
+              </select>
+            </div>
+          </form>
+
+          <div id="selected-account" class="text-center">
+            <h3 class="mb-3">Cuenta N°0002311423</h3>
+            <div class="balance-display p-4 mb-3">
+              <h4 class="mb-3">Tu saldo es de:</h4>
+              <h2 class="display-3">$140000</h2>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <section class="actions-section p-4 h-100">
+          <h3 class="text-center mb-4">¿Qué desea hacer?</h3>
+          <nav>
+            <div class="row g-3">
+              <div class="col-12 col-md-6 col-lg-12">
+                <div class="action-card p-4 text-center rounded">
+                  <a href="deposit.html" class="d-block">
+                    <div class="mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#28a745" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
+                      </svg>
+                    </div>
+                    <h4>Depositar</h4>
+                    <p class="text-muted">Agregar dinero a tu cuenta</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-12">
+                <div class="action-card p-4 text-center rounded">
+                  <a href="sendmoney.html" class="d-block">
+                    <div class="mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#007bff" class="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                      </svg>
+                    </div>
+                    <h4>Enviar Dinero</h4>
+                    <p class="text-muted">Transferir a otras cuentas</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-12">
+                <div class="action-card p-4 text-center rounded">
+                  <a href="transactions.html" class="d-block">
+                    <div class="mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#6c757d" class="bi bi-clock-history" viewBox="0 0 16 16">
+                        <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
+                        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
+                        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
+                      </svg>
+                    </div>
+                    <h4>Últimos movimientos</h4>
+                    <p class="text-muted">Ver historial de transacciones</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </section>
+      </div>
+    </div>
   </main>
-  <footer>
-    <p>
-      &copy; Alke Wallet 2025
-    </p>
+
+  <footer class="py-3 mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0">
+            &copy; Alke Wallet 2025
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -56,6 +120,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
+  <script src="assets/js/menu.js"></script>
 </body>
 
 </html>
