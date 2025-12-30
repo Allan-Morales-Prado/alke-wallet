@@ -64,11 +64,11 @@
         <div class="col-12 col-lg-6 mb-4">
           <!-- Formulario de transferencia -->
           <section class="form-section">
-            <form action="" method="post">
+            <form id="transfer-form">
               <!-- Contacto seleccionado -->
               <div class="selected-contact mb-4">
                 <p class="fw-medium mb-1">Contacto seleccionado:</p>
-                <div class="fw-bold">
+                <div id="selected-contact-info" class="fw-bold">
                   John Doe - RUT: 18.332.131-7 - Cuenta N°0023318332131
                 </div>
               </div>
@@ -147,7 +147,7 @@
                     <th>Número de Cuenta</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="contacts-body">
                   <tr class="contact-row">
                     <td>Ismail Al-Kanabawi</td>
                     <td class="rut-column">33.121.311-0</td>
@@ -186,6 +186,38 @@
     </div>
   </main>
 
+  <!-- Modal para nuevo contacto -->
+  <div class="modal fade" id="newContactModal" tabindex="-1" aria-labelledby="newContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newContactModalLabel">Agregar Nuevo Contacto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="new-contact-form">
+            <div class="mb-3">
+              <label for="new-contact-name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="new-contact-name" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-contact-rut" class="form-label">RUT</label>
+              <input type="text" class="form-control" id="new-contact-rut" placeholder="Ej: 12.345.678-9" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-contact-account" class="form-label">Número de Cuenta</label>
+              <input type="text" class="form-control" id="new-contact-account" placeholder="Ej: 0023312345678" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="save-contact-btn">Guardar Contacto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <div class="back-to-top">
     <a href="#app-title" class="btn btn-outline-secondary btn-sm">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up me-1"
