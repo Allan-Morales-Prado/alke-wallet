@@ -1,0 +1,98 @@
+/* Personalización de la paleta de colores */
+:root {
+    --color-logo-a: #013A6D;
+    --color-logo-b: #34D7DF;
+    --color-logo-c: #111111;
+    --color-logo-d: #f7f7f7;
+    --bs-primary: #013A6D;
+    --bs-primary-rgb: 1, 58, 109;
+    --bs-secondary: #34D7DF;
+    --bs-secondary-rgb: 52, 215, 223;
+    --bs-dark: #111111;
+    --bs-dark-rgb: 17, 17, 17;
+    --bs-light: #f7f7f7;
+    --bs-light-rgb: 247, 247, 247;
+}
+
+/* Aplicar colores personalizados a Bootstrap */
+.bg-primary {
+    background-color: var(--color-logo-a) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-logo-b) !important;
+}
+
+.bg-dark {
+    background-color: var(--color-logo-c) !important;
+}
+
+.bg-light {
+    background-color: var(--color-logo-d) !important;
+}
+
+.text-primary {
+    color: var(--color-logo-a) !important;
+}
+
+.text-secondary {
+    color: var(--color-logo-b) !important;
+}
+
+.text-dark {
+    color: var(--color-logo-c) !important;
+}
+
+.text-light {
+    color: var(--color-logo-d) !important;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--color-logo-a);
+    --bs-btn-border-color: var(--color-logo-a);
+    --bs-btn-hover-bg: #012a50;
+    --bs-btn-hover-border-color: #012a50;
+    --bs-btn-active-bg: #011f3a;
+    --bs-btn-active-border-color: #011f3a;
+    --bs-btn-disabled-bg: var(--color-logo-a);
+    --bs-btn-disabled-border-color: var(--color-logo-a);
+}
+
+.btn-secondary {
+    --bs-btn-bg: var(--color-logo-b);
+    --bs-btn-border-color: var(--color-logo-b);
+    --bs-btn-hover-bg: #2ac2c9;
+    --bs-btn-hover-border-color: #2ac2c9;
+    --bs-btn-active-bg: #25adb3;
+    --bs-btn-active-border-color: #25adb3;
+    --bs-btn-disabled-bg: var(--color-logo-b);
+    --bs-btn-disabled-border-color: var(--color-logo-b);
+    color: var(--color-logo-c) !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--color-logo-a);
+    --bs-btn-border-color: var(--color-logo-a);
+    --bs-btn-hover-bg: var(--color-logo-a);
+    --bs-btn-hover-border-color: var(--color-logo-a);
+    --bs-btn-active-bg: var(--color-logo-a);
+    --bs-btn-active-border-color: var(--color-logo-a);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--color-logo-b);
+    --bs-btn-border-color: var(--color-logo-b);
+    --bs-btn-hover-bg: var(--color-logo-b);
+    --bs-btn-hover-border-color: var(--color-logo-b);
+    --bs-btn-active-bg: var(--color-logo-b);
+    --bs-btn-active-border-color: var(--color-logo-b);
+    color: var(--color-logo-c) !important;
+}
+
+.border-primary {
+    border-color: var(--color-logo-a) !important;
+}
+
+.border-secondary {
+    border-color: var(--color-logo-b) !important;
+}

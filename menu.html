@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Allan Morales">
-    <title>Alke Wallet | Menu</title>
-</head>
-<body>
-    <header>
-        <h1>Alke Wallet</h1>
-        <h3>Bienvenido(a)</h3>
-        <p><a href="login.html">Cerrar Sesión</a></p>
-    </header>
-    <main>
-        <section>
-            <div id="selected-account">
-                <h3>Cuenta N°0002311423</h3>
-                <h4>Tu saldo es de:</h4>
-                <h2>$140000</h2>
-            </div>
 
-            <form>
-                <label for="account">Seleccione una cuenta:</label>
-                <select name="account" id="account">
-                    <option value="cuenta-0002311423">N°0002311423</option>
-                    <option value="cuenta-0002355196">N°0002355196</option>
-                    <option value="cuenta-0002378830">N°0002378830</option>
-                </select>
-            </form>
-        </section>
-        <section>
-            <p>¿Qué desea hacer?</p>
-            <nav>
-                <ul>
-                    <li><a href="deposit.html">Depositar</a></li>
-                    <li><a href="sendmoney.html">Enviar Dinero</a></li>
-                    <li><a href="transactions.html">Últimos movimientos</a></li>
-                </ul>
-            </nav>
-        </section>
-    </main>
-    <footer>
-        <p>
-            &copy; Alke Wallet 2025
-        </p>
-    </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Allan Morales">
+  <title>Alke Wallet | Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Alke Wallet</h1>
+    <h3>Bienvenido(a), Sr. Usuario</h3>
+    <p><a href="login.html">Cerrar Sesión</a></p>
+  </header>
+  <main>
+    <section>
+      
+
+      <form>
+        <label for="account">Seleccione una cuenta:</label>
+        <select name="account" id="account">
+          <option value="cuenta-0002311423">N°0002311423</option>
+          <option value="cuenta-0002355196">N°0002355196</option>
+          <option value="cuenta-0002378830">N°0002378830</option>
+        </select><br><br>
+      </form>
+      <div id="selected-account">
+        <h3>Cuenta N°0002311423</h3>
+        <h4>Tu saldo es de:</h4>
+        <h2>$140000</h2>
+      </div>
+    </section>
+    <section>
+      <p>¿Qué desea hacer?</p>
+      <nav>
+        <ul>
+          <li><a href="deposit.html">Depositar</a></li>
+          <li><a href="sendmoney.html">Enviar Dinero</a></li>
+          <li><a href="transactions.html">Últimos movimientos</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+  <footer>
+    <p>
+      &copy; Alke Wallet 2025
+    </p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
