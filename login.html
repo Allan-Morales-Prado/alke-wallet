@@ -8,33 +8,64 @@
     <title>Alke Wallet | Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
-    <header>
-        <h1>Alke Wallet</h1>
-        <p>Tu billetera digital segura</p>
+    <header class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 mb-2">Alke Wallet</h1>
+                    <p class="lead">Tu billetera digital segura</p>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
-        <form action="menu.html" method="get"> <!-- ERROR: Método NO AUTORIZADO con Live Server-->
-            <div>
-                <label for="email">Correo electrónico</label><br>
-                <input type="email" name="email" id="email"><br><br>
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+                    <div class="login-card">
+                        <form action="menu.html" method="get">
+                            <div class="mb-4">
+                                <h2 class="text-center mb-4">Iniciar Sesión</h2>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-medium">Correo electrónico</label>
+                                <input type="email" class="form-control" name="email" id="email" 
+                                       placeholder="ejemplo@email.com" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fw-medium">Contraseña</label>
+                                <input type="password" class="form-control" name="password" id="password" 
+                                       placeholder="Ingresa tu contraseña" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-4">Iniciar Sesión</button>
+                        </form>
+
+                        <div class="text-center pt-3 border-top">
+                            <p class="mb-0">¿No tienes una cuenta?, entonces <a href="index.html">Regístrate</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="password">Contraseña</label><br>
-                <input type="password" name="password" id="password"><br><br>
-            </div>
-            <button type="submit">Iniciar Sesión</button><br><br>
-        </form>
-        <div>
-            <p>¿No tienes una cuenta?, entonces <a href="index.html">Regístrate</a></p>
         </div>
     </main>
-    <footer>
-        <p>
-            &copy; Alke Wallet 2025
-        </p>
+
+    <footer class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">
+                        &copy; Alke Wallet 2025
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
