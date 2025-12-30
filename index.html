@@ -28,12 +28,19 @@
       <div class="col-12 col-md-10 col-lg-8 col-xl-6">
         <section id="register" class="p-4 mb-4">
           <p class="text-center mb-4">Regístrate ahora y comienza a gestionar tus finanzas de forma rápida y segura</p>
-          <form>
+          
+          <!-- Mensajes de alerta -->
+          <div id="alert-container" class="mb-3"></div>
+          
+          <form id="register-form">
             <div class="mb-3">
               <label for="email" class="form-label">
                 Correo electrónico
               </label>
               <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com">
+              <div class="invalid-feedback" id="email-error">
+                Por favor ingresa un correo válido.
+              </div>
             </div>
 
             <div class="mb-3">
@@ -41,6 +48,9 @@
                 Contraseña
               </label>
               <input type="password" class="form-control" id="password" name="password">
+              <div class="invalid-feedback" id="password-error">
+                La contraseña debe tener al menos 6 caracteres.
+              </div>
             </div>
 
             <div class="mb-4">
@@ -48,9 +58,12 @@
                 Confirmar Contraseña
               </label>
               <input type="password" class="form-control" id="confirm-password" name="confirm-password">
+              <div class="invalid-feedback" id="confirm-password-error">
+                Las contraseñas no coinciden.
+              </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg w-100">Crear Cuenta</button>
+            <button type="submit" class="btn btn-primary btn-lg w-100" id="submit-btn">Crear Cuenta</button>
           </form>
         </section>
 
@@ -77,6 +90,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
