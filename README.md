@@ -1,5 +1,3 @@
-# alke-wallet
-A financial asset manager
 # Alke Wallet - Billetera Digital
 
 ## Descripción del Producto
